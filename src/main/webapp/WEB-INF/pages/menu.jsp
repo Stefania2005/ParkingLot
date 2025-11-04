@@ -26,8 +26,6 @@ eq '/cars.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.reques
                 </ul>
 
 
-
-
             </div>
         </div>
     </nav>
