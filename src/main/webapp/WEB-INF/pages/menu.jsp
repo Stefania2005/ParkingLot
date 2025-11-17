@@ -17,6 +17,14 @@ eq '/about.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.reque
                          ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/"))
 eq '/cars.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/Cars">Cars</a>
                     </li>
+
+                    <a class="nav-link
+     ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/"))
+        eq '/users.jsp' ? ' active' : ''}"
+                       aria-current="page"
+                       href="${pageContext.request.contextPath}/Users">Users</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
@@ -29,7 +37,6 @@ eq '/cars.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.reques
                         <a class="nav-link" href="${pageContext.request.contextPath}/Login">Login</a>
                     </li>
                 </ul>
-
 
             </div>
         </div>
