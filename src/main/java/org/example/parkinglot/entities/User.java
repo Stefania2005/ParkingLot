@@ -33,6 +33,8 @@ public class User {
         this.cars = cars;
     }
 
+
+    //scrie valorile din baza de date
     public String getUsername() {
         return username;
     }

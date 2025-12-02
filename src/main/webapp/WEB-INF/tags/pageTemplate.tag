@@ -10,11 +10,13 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/pages/menu.jsp" />
+<script src="${pageContext.request.contextPath}/scripts/form-validation.js"></script>
 <main class="container-fluid mt-5">
     <jsp:doBody/>
 </main>
 </body>
 <footer>
     <jsp:include page="/WEB-INF/pages/footer.jsp" />
+    <script src="${pageContext.request.contextPath}/scripts/form-validation.js"></script>
 </footer>
 </html>

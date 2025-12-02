@@ -51,4 +51,6 @@ public class Car {
     public void setParkingSpot(String parkingSpot) {
         this.parkingSpot = parkingSpot;
     }
+
+
 }
