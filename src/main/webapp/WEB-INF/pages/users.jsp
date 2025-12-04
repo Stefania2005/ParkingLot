@@ -1,27 +1,44 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: stefa
-  Date: 17.11.2025
-  Time: 15:08
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:pageTemplate pageTitle="Users">
     <h1>Users</h1>
-    <div class="container text-center">
-        <div class="row fw-semibold border-bottom pb-2 mb-3">
-            <div class="col">Username</div>
-            <div class="col">Email</div>
+
+    <form method="POST" action="${pageContext.request.contextPath}/Users">
+
+        <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
+            <a href="${pageContext.request.contextPath}/AddUser" class="btn btn-primary btn-lg">Add User</a>
+            <button class="btn btn-secondary" type="submit">Invoice</button>
+        </c:if>
+
+        <div class="container text-center">
+
+
+            <c:forEach var="user" items="${users}">
+                <div class="row mb-2">
+
+                    <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
+                        <div class="col">
+                            <input type="checkbox" name="user_ids" value="${user.id}" />
+                        </div>
+                    </c:if>
+
+                    <div class="col">${user.username}</div>
+                    <div class="col">${user.email}</div>
+
+                </div>
+            </c:forEach>
+
         </div>
 
-        <c:forEach var="user" items="${users}">
-            <div class="row mb-2">
-                <div class="col">${user.username}</div>
-                <div class="col">${user.email}</div>
-            </div>
+    </form>
+    <c:if test="${not empty invoices}">
+        <h2>Invoices</h2>
+        <c:forEach var="username" items="${invoices}" varStatus="status">
+            ${status.index +1}. ${username}
+            <br/>
         </c:forEach>
-    </div>
+    </c:if>
+
 </t:pageTemplate>
