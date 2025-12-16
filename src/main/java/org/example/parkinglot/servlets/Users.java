@@ -45,7 +45,7 @@ public class Users extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String[] userIdsAsString = request.getParameterValues("userIds");
+        String[] userIdsAsString = request.getParameterValues("user_ids");
         if(userIdsAsString != null ) {
             List<Long> userIds = new ArrayList<Long>();
             for (String userIdAsString : userIdsAsString) {
