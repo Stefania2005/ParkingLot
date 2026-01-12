@@ -1,4 +1,4 @@
-package org.example.parkinglot.servlets;
+package org.example.parkinglot.servlets.users;
 
 import jakarta.annotation.security.DeclareRoles;
 import jakarta.servlet.annotation.HttpConstraint;
@@ -39,7 +39,7 @@ public class Users extends HttpServlet {
             request.setAttribute("invoices", usernames);
         }
 
-        request.getRequestDispatcher("/WEB-INF/pages/users.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/users/users.jsp").forward(request, response);
     }
 
     @Override
